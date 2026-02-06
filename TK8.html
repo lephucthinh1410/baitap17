@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Nhập mã màu HEX</h3>
+
+<input type="text" id="hex" placeholder="Ví dụ: #FF0000">
+<button onclick="convert()">Convert</button>
+
+<p id="result"></p>
+
+<script>
+function convert(){
+
+    let hex = document.getElementById("hex").value.replace("#","");
+
+    if(hex.length !== 6){
+        document.getElementById("result").innerHTML = "HEX không hợp lệ";
+        return;
+    }
+
+    let r = parseInt(hex.substring(0,2),16);
+    let g = parseInt(hex.substring(2,4),16);
+    let b = parseInt(hex.substring(4,6),16);
+
+    document.getElementById("result").innerHTML =
+        `RGB = rgb(${r},${g},${b})`;
+}
+</script>
+
+</body>
+</html>

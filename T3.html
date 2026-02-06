@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="search" placeholder="Tìm kiếm..." onkeyup="filterList()">
+
+<ul id="myList">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Orange</li>
+  <li>Mango</li>
+</ul>
+
+<script>
+function filterList(){
+    let input = document.getElementById("search").value.toLowerCase();
+    let items = document.querySelectorAll("#myList li");
+
+    items.forEach(li=>{
+        li.style.display = li.textContent.toLowerCase().includes(input) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>

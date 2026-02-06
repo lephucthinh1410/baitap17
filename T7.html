@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Nhập các số (cách nhau dấu phẩy)</h3>
+
+<input type="text" id="arrayInput" placeholder="Ví dụ: 1,5,10,2">
+<button onclick="sumArray()">Tính tổng</button>
+
+<p id="result"></p>
+
+<script>
+function sumArray(){
+
+    let input = document.getElementById("arrayInput").value;
+
+    let arr = input.split(",").map(Number);
+
+    let sum = arr.reduce((a,b)=>a+b,0);
+
+    document.getElementById("result").innerHTML = "Tổng = " + sum;
+}
+</script>
+
+</body>
+</html>

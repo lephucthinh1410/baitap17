@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Nhập giá trị đơn hàng ($)</h3>
+
+<input type="number" id="order" placeholder="Nhập số tiền">
+<button onclick="calc()">Tính thanh toán</button>
+
+<p id="result"></p>
+
+<script>
+function calc(){
+
+    let order = Number(document.getElementById("order").value);
+
+    let ship = order > 50 ? 0 : 5;
+
+    let total = order + ship;
+
+    document.getElementById("result").innerHTML =
+        "Phí ship = " + ship + "$ <br> Tổng thanh toán = " + total + "$";
+}
+</script>
+
+</body>
+</html>
